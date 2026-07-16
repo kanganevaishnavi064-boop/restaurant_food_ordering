@@ -60,10 +60,9 @@ while($row = mysqli_fetch_assoc($result))
             ₹<?php echo $row['price']; ?>
         </h2>
 
-        <button class="cart-btn">
-            🛒 Add to Cart
-        </button>
-
+        <a href="add_to_cart.php?id=<?php echo $row['id']; ?>" class="cart-btn">
+    🛒 Add to Cart
+      </a>
     </div>
 
 </div>
