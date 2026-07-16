@@ -1,73 +1,50 @@
-```html id="v0t8s1"
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Taste of Nashik</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<?php
+include("config/config.php");
+include("includes/header.php");
+include("includes/navbar.php");
+?>
 
-<header>
-    <nav>
-        <h1>Taste of Nashik</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<div class="container">
 
-<section class="menu">
-    <h2>Our Menu</h2>
+<h1>Our Menu</h1>
 
-    <div class="cards">
+<div class="food-container">
 
-        <div class="card">
-            <h3>Paneer Tikka</h3>
-            <p>Delicious grilled paneer with spices.</p>
-            <p>₹180</p>
-        </div>
+<?php
 
-        <div class="card">
-            <h3>Veg Biryani</h3>
-            <p>Traditional aromatic biryani.</p>
-            <p>₹220</p>
-        </div>
+$sql = "SELECT foods.*, categories.category_name
+        FROM foods
+        INNER JOIN categories
+        ON foods.category_id = categories.id";
 
-        <div class="card">
-            <h3>Margherita Pizza</h3>
-            <p>Fresh cheese and tomato pizza.</p>
-            <p>₹250</p>
-        </div>
+$result = mysqli_query($conn, $sql);
 
-        <div class="card">
-            <h3>Veg Burger</h3>
-            <p>Crispy burger with fresh vegetables.</p>
-            <p>₹150</p>
-        </div>
+while($row = mysqli_fetch_assoc($result))
+{
+?>
 
-        <div class="card">
-            <h3>Cold Coffee</h3>
-            <p>Refreshing chilled coffee.</p>
-            <p>₹120</p>
-        </div>
+<div class="food-card">
 
-        <div class="card">
-            <h3>Chocolate Brownie</h3>
-            <p>Rich chocolate dessert.</p>
-            <p>₹140</p>
-        </div>
+<img src="assets/images/<?php echo $row['image']; ?>">
 
-    </div>
-</section>
+<h3><?php echo $row['food_name']; ?></h3>
 
-<footer>
-    <p>© 2026 Taste of Nashik Restaurant</p>
-</footer>
+<p><?php echo $row['category_name']; ?></p>
 
-</body>
-</html>
-```
+<h4>₹<?php echo $row['price']; ?></h4>
+
+<button>Order Now</button>
+
+</div>
+
+<?php
+}
+?>
+
+</div>
+
+</div>
+
+<?php
+include("includes/footer.php");
+?>

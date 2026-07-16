@@ -1,0 +1,305 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+}
+
+/* Navbar */
+
+.navbar{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo h2{
+    color:#fc8019;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+}
+
+.nav-links a:hover{
+    color:#fc8019;
+}
+
+/* Hero */
+
+.hero{
+    height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("../images/hero.png");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+.search-box{
+    margin-top:35px;
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+    width:450px;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+}
+
+.search-box button{
+    padding:15px 30px;
+    border:none;
+    border-radius:8px;
+    background:#fc8019;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+/* Featured */
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+}
+
+.container h2{
+    margin-bottom:35px;
+}
+
+.food-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.food-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+}
+
+.food-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.food-card h3{
+    padding:15px 15px 5px;
+}
+
+.food-card p{
+    padding:0 15px;
+    color:#555;
+}
+
+.food-card button{
+    width:90%;
+    margin:20px auto;
+    display:block;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#fc8019;
+    color:white;
+    cursor:pointer;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Modern Food Cards */
+
+.food-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.food-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.food-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.food-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.food-info{
+    padding:18px;
+}
+
+.food-info h3{
+    margin:10px 0;
+    font-size:24px;
+}
+
+.rating{
+    background:#16a34a;
+    color:white;
+    padding:5px 10px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.category{
+    color:#777;
+    margin-top:10px;
+}
+
+.time{
+    color:#666;
+    margin:10px 0;
+}
+
+.food-info h2{
+    color:#ff6b35;
+    margin:15px 0;
+}
+
+.cart-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#ff6b35;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cart-btn:hover{
+    background:#e95a28;
+    transform:scale(1.03);
+}
+
+/* ==========================
+   Register / Login Form
+========================== */
+
+.form-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+.form-box{
+    width:450px;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-box h2{
+    text-align:center;
+    color:#fc8019;
+    margin-bottom:25px;
+}
+
+.form-box label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.form-box input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.form-box input:focus{
+    border-color:#fc8019;
+    outline:none;
+}
+
+.form-box button{
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    background:#fc8019;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-box button:hover{
+    background:#e76f00;
+}
+
+.success-msg{
+    color:green;
+    text-align:center;
+    margin-bottom:15px;
+    font-weight:bold;
+}

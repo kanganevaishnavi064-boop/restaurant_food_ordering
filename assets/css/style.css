@@ -298,3 +298,45 @@ margin-left:260px;
 padding:30px;
 
 }
+
+.food-info{
+    padding:15px;
+}
+
+.rating{
+    display:inline-block;
+    background:#16a34a;
+    color:white;
+    padding:4px 10px;
+    border-radius:6px;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.category{
+    color:#777;
+    margin:8px 0;
+}
+
+.time{
+    color:#555;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.cart-btn{
+    width:100%;
+    background:#ff6b35;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.cart-btn:hover{
+    background:#e85a26;
+    transform:scale(1.03);
+}

@@ -1,8 +1,6 @@
 <?php
+include 'config/config.php';
 include 'includes/header.php';
-?>
-
-<?php
 include 'includes/navbar.php';
 ?>
 
@@ -15,61 +13,66 @@ include 'includes/navbar.php';
     <p>Order your favourite meals online in just a few clicks.</p>
 
     <form class="search-box">
-
         <input type="text" placeholder="Search your favourite food...">
-
         <button type="submit">Search</button>
-
     </form>
 
 </section>
 
-<!-- Featured Foods -->
+<!-- Popular Dishes -->
 
 <section class="container">
 
-    <h2>Featured Foods</h2>
+<h2>🍽 Popular Dishes</h2>
 
-    <div class="food-container">
+<div class="food-container">
 
-        <div class="food-card">
+<?php
 
-            <img src="assets/images/loaded-pizza.png" alt="Loaded Pizza">
+$sql = "SELECT * FROM foods ORDER BY id DESC LIMIT 6";
+$result = mysqli_query($conn, $sql);
 
-            <h3>loaded pizza</h3>
+while($row = mysqli_fetch_assoc($result))
+{
+?>
 
-            <p>₹299</p>
+<div class="food-card">
 
-            <button>Add to Cart</button>
+    <img src="assets/images/<?php echo $row['image']; ?>" alt="<?php echo $row['food_name']; ?>">
 
-        </div>
+    <div class="food-info">
 
-        <div class="food-card">
+        <span class="rating">
+            ⭐ 4.5
+        </span>
 
-            <img src="assets/images/chicken-burger.png" alt="Chicken Burger">
+        <h3><?php echo ucfirst($row['food_name']); ?></h3>
 
+        <p class="category">
+            <?php echo ucfirst($row['food_name']); ?> • Fast Food
+        </p>
 
-            <h3>Chicken Burger</h3>
+        <p class="time">
+            🕒 25 mins
+        </p>
 
-            <p>₹199</p>
+        <h2>
+            ₹<?php echo $row['price']; ?>
+        </h2>
 
-            <button>Add to Cart</button>
-
-        </div>
-
-        <div class="food-card">
-
-            <img src="assets/images/red-sauce-pasta.png" alt="Red Sauce Pasta">
-
-            <h3>Red Sauce Pasta</h3>
-
-            <p>₹249</p>
-
-            <button>Add to Cart</button>
-
-        </div>
+        <button class="cart-btn">
+            🛒 Add to Cart
+        </button>
 
     </div>
+
+</div>
+
+<?php
+}
+?>
+
+</div>
 
 </section>
 
